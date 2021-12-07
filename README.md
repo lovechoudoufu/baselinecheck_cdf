@@ -5,7 +5,7 @@
 
 ​    上古时期写的工具了，现在看当时写的代码真乱，试了试还是可以使用的，用来对linux系统和windows系统做个简单的基线检查还是可以的（当时在ubuntu18.04\centos7和windows2008\2012测试的该工具，除去win2003、很老的redhat、arch之类的，按理说在常规系统通用）。
 
-​    能够检查的项目可以在模板报告的word中看：windows检查内容(models/Wordtemplate/Windows.docx)、linux检查内容(models/Wordtemplate/Linux.docx)。检查的项目都是根据当时自己的理解和找到的资料整理的。
+​    能够检查的项目可以在模板报告的word中看：[windows检查内容](https://github.com/lovechoudoufu/baselinecheck_cdf/blob/main/models/Wordtemplate/Windows.docx)、[linux检查内容](https://github.com/lovechoudoufu/baselinecheck_cdf/blob/main/models/Wordtemplate/Linux.docx)。检查的项目都是根据当时自己的理解和找到的资料整理的。
 
 # 安装
 

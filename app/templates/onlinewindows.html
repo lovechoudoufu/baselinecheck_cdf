@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}在线模式{% endblock %}
+
+
+{% block navbar %}
+<section class="content-header">
+    <h1>Windows服务器</h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> 当前位置</li>
+        <li class="active">在线模式</li>
+        <li class="active">Windows服务器</li>
+    </ol>
+</section>
+{% endblock %}
+
+
+{% block content %}
+<div class="box box-primary">
+    <form method="post">
+        {{form.hidden_tag()}}
+        <div class="box-header with-border">
+            {% include 'message.html' %}
+        </div>
+
+        <div class="box-body">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.formip.label}}</label>
+                    {{form.formip(class_="form-control",placeholder="例如：192.168.0.11")}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.formport.label}}</label>
+                    {{form.formport(class_="form-control",value="445")}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.formuser.label}}</label>
+                    {{form.formuser(class_="form-control",placeholder="例如：administrator")}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.formpwd.label}}</label>
+                    {{form.formpwd(class_="form-control",placeholder="例如：QWEqwe123")}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.formnote.label}}</label>
+                    {{form.formnote(class_="form-control",value="Windows在线任务")}}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box-footer">
+            <div class="col-md-12">
+                {{form.submit(class_="btn btn-primary pull-right")}}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

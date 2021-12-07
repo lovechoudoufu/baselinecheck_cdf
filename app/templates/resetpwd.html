@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}修改密码{% endblock %}
+
+
+{% block navbar %}
+<section class="content-header">
+    <h1>修改密码</h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> 当前位置</li>
+        <li class="active">修改密码</li>
+    </ol>
+</section>
+{% endblock %}
+
+
+{% block content %}
+<div class="box box-primary">
+    <form method="post">
+        {{form.hidden_tag()}}
+        <div class="box-header with-border">
+            {% include 'message.html' %}
+        </div>
+
+        <div class="box-body">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.oldpwd.label}}</label>
+                    {{form.oldpwd(class_="form-control",placeholder="原密码")}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.newpwd.label}}</label>
+                    {{form.newpwd(class_="form-control",placeholder="新密码")}}
+                </div>
+            </div>
+
+        </div>
+
+        <div class="box-footer">
+            <div class="col-md-12">
+                {{form.submit(class_="btn btn-primary pull-right")}}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}首页{% endblock %}
+
+{% block navbar %}
+<section class="content-header">
+    <h1>首页</h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> 当前位置</li>
+        <li class="active">首页</li>
+    </ol>
+</section>
+{% endblock %}
+
+{% block content %}
+<div class="box box-primary">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-lg-6 col-xs-6">
+                <div class="small-box bg-aqua">
+                    <div class="inner">
+                        <h3 id="count01">{{ num1 }}</h3>
+                        <p>任务总数</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-ios-gear-outline"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-xs-6">
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3 id="count04">{{ num2 }}</h3>
+                        <p>正在进行的任务</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h4><i class="icon fa fa-info"></i> 使用说明</h4>
+            <ol>
+                <li>如果本工具网络可连通到服务器，即：可连通目标服务器的ssh服务端口（linux）或smb服务端口（windows），可使用在线模式配置ip地址、端口、账号、密码进行远程连接检查，任务执行结束后即可获取基线检查报告。（账号密码不会保存在本工具中，请放心使用）</li>
+                <br>
+                <li>如果本工具网络不可连通到服务器，请使用离线检查方式：下载基线检查脚本（.sh或.bat）放到目标服务器执行。linux检查结果保存在/tmp/baseline_check.txt文件中，windows检查结果保存在%USERPROFILE%\baseline_check.txt文件中，生成的txt文件zip打包上传即可获取基线检查报告。支持同类型多个txt进行zip打包上传，但txt文件名建议改成ip再打包。</li>
+                <br>
+                <li>报告下载页面获取对应的检查报告。</li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}

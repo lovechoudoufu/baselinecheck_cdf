@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Windows服务器{% endblock %}
+
+
+{% block navbar %}
+<section class="content-header">
+    <h1>Windows服务器</h1>
+    <ol class="breadcrumb">
+        <li><i class="fa fa-dashboard"></i> 当前位置</li>
+        <li class="active">离线模式</li>
+        <li class="active">Windows服务器</li>
+    </ol>
+</section>
+{% endblock %}
+
+
+{% block content %}
+<div class="box box-primary">
+    <form method="post" enctype="multipart/form-data">
+        {{form.hidden_tag()}}
+        <div class="box-header with-border">
+            {% include 'message.html' %}
+        </div>
+
+
+        <div class="box-body">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.formfile.label}}</label>
+                        {{ form.csrf_token }}
+                        {{ form.formfile }}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{form.formnote.label}}</label>
+                    {{form.formnote(class_="form-control",value="Windows离线任务")}}
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <a href="{{ url_for('static', filename='download/windowscheck.zip') }}" download="windows2008离线检查脚本下载">离线检查脚本下载</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-footer">
+            <div class="col-md-12">
+                {{form.submit(class_="btn btn-primary pull-right")}}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

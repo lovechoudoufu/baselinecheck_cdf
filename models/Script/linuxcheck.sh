@@ -54,6 +54,7 @@ echo 'if not is null' >> /tmp/baseline_check.txt
 ps -aux | grep -i -E "tomcat|weblogic|httpd|jboss|nginx|apache" >> /tmp/baseline_check.txt
 echo '12.distused(IsCheckLine)' >> /tmp/baseline_check.txt
 #linux硬盘使用有没有超过80%
+#修复可能出现的中文gbk报错
 df -h | sed -n '2,99999p' >> /tmp/baseline_check.txt
 #重要文件的文件权限
 echo '13.filepermission(IsCheckLine)' >> /tmp/baseline_check.txt
